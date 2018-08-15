@@ -7,6 +7,8 @@ import {PlanetsMaterialModule} from './planets-material.module';
 import {PlanetsModule} from './planets/planets.module';
 import {AppRoutingModule} from './app.routes';
 import {HashLocationStrategy, LocationStrategy} from '@angular/common';
+import {MessageService} from './message.service';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -19,9 +21,11 @@ import {HashLocationStrategy, LocationStrategy} from '@angular/common';
     BrowserAnimationsModule,
     PlanetsMaterialModule,
     PlanetsModule,
+    HttpClientModule
   ],
   providers: [
-    {provide: LocationStrategy, useClass: HashLocationStrategy}
+    MessageService,
+    {provide: LocationStrategy, useClass: HashLocationStrategy},
   ],
   bootstrap: [AppComponent]
 })

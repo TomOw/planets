@@ -4,6 +4,7 @@ import {PlanetsComponent} from './planets.component';
 import {PlanetsRoutingModule} from './planets.routes';
 import {PlanetsMaterialModule} from '../planets-material.module';
 import {PlanetComponent} from './planet/planet.component';
+import {PlanetsService} from './planets.service';
 
 @NgModule({
   imports: [
@@ -15,7 +16,7 @@ import {PlanetComponent} from './planet/planet.component';
     PlanetsComponent,
     PlanetComponent,
   ],
-  providers: [],
+  providers: [PlanetsService],
   entryComponents: []
 
 })

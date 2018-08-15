@@ -11,3 +11,13 @@ body {
   color: $main-font-color;
   background-color: $dark-gray;
 }
+
+.snack-bar--error {
+  color: $red !important;
+  font-weight: 600;
+}
+
+.snack-bar--warn {
+  color: $orange !important;
+  font-weight: 600;
+}
