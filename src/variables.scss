@@ -1,0 +1,18 @@
+@import "~@angular/material/theming";
+
+@include mat-core();
+
+$dark-gray: #3F3F3F;
+$very-dark-gray: darken($dark-gray, 5%);
+$primary: mat-color($mat-teal, 300);
+
+$main-font: Oswald, sans-serif;
+$main-font-color: #e8e8e8;
+
+$font-roboto: 'Roboto Condensed', sans-serif;
+$font-lato: 'Lato', sans-serif;
+
+$md-breakpoint: 1500px;
+$mobile-breakpoint: 690px;
+$tablet-breakpoint: 995px;
+$desktop-breakpoint: 1365px;

@@ -7,5 +7,7 @@
 
 body {
 	margin: 0;
-	font-family: Oswald, sans-serif;
+	font-family: $font-lato;
+  color: $main-font-color;
+  background-color: $dark-gray;
 }
