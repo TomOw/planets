@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from '../../../node_modules/rxjs';
+import {PageResponse, Planet} from '../domain/models';
 
 @Injectable()
 export class PlanetsService {
@@ -10,15 +11,15 @@ export class PlanetsService {
   constructor(private http: HttpClient) {
   }
 
-  getById(id: string): Observable<string> {
-    return this.http.get<string>(this.url + id);
+  getById(id: string): Observable<Planet> {
+    return this.http.get<Planet>(this.url + id);
   }
 
-  getByPage(page: number): Observable<string> {
-    return this.http.get<string>(this.url, {params: {page: String(page)}});
+  getByPage(page: number): Observable<PageResponse<Planet>> {
+    return this.http.get<PageResponse<Planet>>(this.url, {params: {page: String(page)}});
   }
 
-  search(query: string): Observable<string> {
-    return this.http.get<string>(this.url, {params: {search: query}});
+  search(query: string): Observable<PageResponse<Planet>> {
+    return this.http.get<PageResponse<Planet>>(this.url, {params: {search: query}});
   }
 }
