@@ -1,0 +1,53 @@
+.planet {
+  margin-top: 24px;
+  .planet__main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    .planet__img {
+      width: 100px;
+      height: 100px;
+      flex-shrink: 0;
+    }
+  }
+  .planet__data {
+    display: flex;
+    flex-direction: column;
+    padding-left: 48px;
+    .planet__data__name {
+      width: 200px;
+      font-size: 32px;
+      font-weight: 400;
+      padding: 16px 0 ;
+    }
+    .planet__data__info {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      .planet__data__property {
+        width: 300px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        font-size: 18px;
+        font-weight: 300;
+        padding: 8px 0;
+        img {
+          width: 36px;
+          height: 36px;
+          margin-right: 8px;
+          flex-shrink: 0;
+        }
+        div {
+          margin-right: 4px;
+        }
+      }
+    }
+  }
+  mat-card-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+}

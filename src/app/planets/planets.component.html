@@ -14,5 +14,7 @@
 </header>
 
 <main class="planet-list">
-  <div class="planet-list__content"></div>
+  <div class="planet-list__content">
+    <planet-list-element *ngFor="let planet of planets" [planet]="planet"></planet-list-element>
+  </div>
 </main>

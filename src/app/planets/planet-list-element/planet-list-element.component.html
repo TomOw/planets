@@ -1,0 +1,31 @@
+<mat-card class="planet">
+  <mat-card-content class="planet__main">
+    <img class="planet__img" src="../../../assets/earth.svg">
+    <div class="planet__data">
+      <div class="planet__data__name">
+        {{planet.name}}
+      </div>
+      <div class="planet__data__info">
+        <div class="planet__data__property">
+          <img src="../../../assets/icons/team.png">
+          <div>Population</div>
+          <div>{{planet.population | largeNumber}}</div>
+        </div>
+        <div class="planet__data__property">
+          <img src="../../../assets/icons/gravity.png">
+          <div>Gravity</div>
+          <div>{{planet.gravity}}</div>
+        </div>
+        <div class="planet__data__property">
+          <img src="../../../assets/icons/mist.png">
+          <div>Climate</div>
+          <div>{{planet.climate}}</div>
+        </div>
+      </div>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary">Details</button>
+  </mat-card-actions>
+</mat-card>
+
