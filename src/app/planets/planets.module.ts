@@ -9,6 +9,7 @@ import {PlanetsService} from './planets.service';
 import {SharedModule} from '../shared/shared.module';
 import { PlanetListElementSkeletonComponent } from './planet-list-element-skeleton/planet-list-element-skeleton.component';
 import {RouterModule} from '@angular/router';
+import { PlanetSkeletonComponent } from './planet-skeleton/planet-skeleton.component';
 
 @NgModule({
   imports: [
@@ -23,6 +24,7 @@ import {RouterModule} from '@angular/router';
     PlanetComponent,
     PlanetListElementComponent,
     PlanetListElementSkeletonComponent,
+    PlanetSkeletonComponent,
   ],
   providers: [PlanetsService],
   entryComponents: []

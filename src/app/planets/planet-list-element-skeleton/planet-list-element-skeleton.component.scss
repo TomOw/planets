@@ -1,5 +1,7 @@
-$base-color: gray;
-$shine-color: #9b9b9b;
+@import "../../../variables";
+
+$base-color: $skeleton-placeholder;
+$shine-color: $skeleton-placeholder-shine;
 $animation-duration: 1.6s;
 @mixin background-gradient {
   background-image: linear-gradient(90deg, $base-color 0px, $shine-color 40px, $base-color 80px);
@@ -28,7 +30,7 @@ $animation-duration: 1.6s;
       width: 100px;
       height: 100px;
       border-radius: 50%;
-      background-color: grey;
+      background-color: $skeleton-placeholder;
       flex-shrink: 0;
       @include background-gradient;
       animation: shine-lines $animation-duration infinite linear;
@@ -46,7 +48,7 @@ $animation-duration: 1.6s;
       margin: 16px 0;
       font-weight: 400;
       padding: 16px 0;
-      background-color: grey;
+      background-color: $skeleton-placeholder;
       @include background-gradient;
       animation: shine-lines $animation-duration infinite linear;
     }
@@ -62,7 +64,7 @@ $animation-duration: 1.6s;
         flex-direction: row;
         flex-wrap: wrap;
         align-items: center;
-        background-color: grey;
+        background-color: $skeleton-placeholder;
         font-weight: 300;
         @include background-gradient;
         animation: shine-lines $animation-duration infinite linear;
@@ -85,7 +87,7 @@ $animation-duration: 1.6s;
     div {
       width: 88px;
       height: 36px;
-      background-color: grey;
+      background-color: $skeleton-placeholder;
       @include background-gradient;
       animation: shine-lines $animation-duration infinite linear;
     }

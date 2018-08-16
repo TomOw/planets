@@ -1,0 +1,156 @@
+@import "../../../variables";
+
+$base-color: $skeleton-placeholder;
+$shine-color: $skeleton-placeholder-shine;
+$animation-duration: 1.6s;
+@mixin background-gradient {
+  background-image: linear-gradient(90deg, $base-color 0px, $shine-color 40px, $base-color 80px);
+  background-size: 300px;
+}
+
+@keyframes shine-lines {
+  0% {
+    background-position: -110px
+  }
+  40%, 100% {
+    background-position: 200px
+  }
+}
+
+.planet--skeleton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 24px;
+
+  .planet--skeleton__top-bar {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    height: 96px;
+    width: 100%;
+    padding-left: 40px;
+    .planet--skeleton__top-bar__back-button {
+      cursor: pointer;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      text-decoration: none;
+      color: $main-font-color;
+      img {
+        width: 64px;
+        height: 64px;
+        margin-right: 16px;
+      }
+      div {
+        font-size: 24px;
+        font-weight: 300;
+      }
+      &:hover {
+        div {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .planet--skeleton__name {
+      height: 96px;
+      margin: 8px 0;
+      position: absolute;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      width: 400px;
+      left: calc(50% - 200px);
+      font-weight: 300;
+      color: $main-font-color;
+      background-color: $skeleton-placeholder;
+      @include background-gradient;
+      animation: shine-lines $animation-duration infinite linear;
+    }
+  }
+
+  .planet--skeleton__data {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+
+    @media screen and (max-width: $desktop-breakpoint) {
+      .planet--skeleton__data {
+        width: 80%;
+      }
+    }
+    @media screen and (max-width: $tablet-breakpoint) {
+      .planet--skeleton__data {
+        width: 100%;
+      }
+    }
+
+    .planet--skeleton__data__left, .planet--skeleton__data__right {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .planet--skeleton__data__left {
+      align-items: flex-end;
+    }
+
+    .planet--skeleton__data__right {
+      align-items: flex-start;
+    }
+
+    .planet--skeleton__data__img {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      flex-grow: 1;
+      height: 512px;
+      div {
+        width: 400px;
+        height: 400px;
+        border-radius: 50%;
+        background-color: $skeleton-placeholder;
+        @include background-gradient;
+        animation: shine-lines $animation-duration infinite linear;
+      }
+    }
+  }
+}
+
+.planet--skeleton__property {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-bottom: 32px;
+
+  .planet--skeleton__property__title {
+    height: 51px;
+    width: 200px;
+    margin: 8px 0;
+    background-color: $skeleton-placeholder;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    @include background-gradient;
+    animation: shine-lines $animation-duration infinite linear;
+  }
+
+  .planet--skeleton__property__value {
+    height: 16px;
+    width: 100px;
+    margin: 4px 0;
+    background-color: $skeleton-placeholder;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 400;
+    @include background-gradient;
+    animation: shine-lines $animation-duration infinite linear;
+  }
+}
