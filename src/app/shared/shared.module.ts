@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {LargeNumberPipe} from './pipes/large-number.pipe';
 import {PlanetsMaterialModule} from '../planets-material.module';
+import {NotificationService} from './notification.service';
 
 @NgModule({
   imports: [
@@ -13,6 +14,9 @@ import {PlanetsMaterialModule} from '../planets-material.module';
   ],
   exports: [
     LargeNumberPipe,
+  ],
+  providers: [
+    NotificationService
   ]
 })
 export class SharedModule {

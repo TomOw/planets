@@ -29,3 +29,13 @@ export class PageResponse<T> {
   previous: string;
   results: T[];
 }
+
+export class AppNotification {
+  action: AppNotificationAction;
+  data: any;
+
+}
+
+export enum AppNotificationAction {
+  SEARCH
+}
