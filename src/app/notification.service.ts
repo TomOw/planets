@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import {Subject} from '../../../node_modules/rxjs';
-import {AppNotification, AppNotificationAction} from '../domain/models';
+import {AppNotification, AppNotificationAction} from './domain/models';
+import {Subject} from '../../node_modules/rxjs';
 
 @Injectable()
 export class NotificationService {

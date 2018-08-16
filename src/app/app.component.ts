@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {MessageService} from './message.service';
 import {MatSnackBar, MatSnackBarConfig} from '@angular/material';
-import {NotificationMessageType} from './domain/models';
-import {NotificationService} from './shared/notification.service';
+import {AppNotificationAction, NotificationMessageType} from './domain/models';
+import {NotificationService} from './notification.service';
 
 @Component({
   selector: 'app-root',
@@ -13,13 +13,15 @@ export class AppComponent implements OnInit {
 
   constructor(public snackBar: MatSnackBar,
               public messageService: MessageService,
-              private notificationService: NotificationService) {
+              public notificationService: NotificationService) {
 
     messageService.messageSource$.subscribe(
       message => {
         this.openSnackBar(message.detail, message.summary, message.type);
       });
   }
+
+  searchQuery: string;
 
   ngOnInit(): void {
   }
@@ -39,5 +41,9 @@ export class AppComponent implements OnInit {
         break;
     }
     this.snackBar.open((summary + ' ' + message), '', config);
+  }
+
+  searchChanged() {
+    this.notificationService.emitNotification(AppNotificationAction.SEARCH, this.searchQuery);
   }
 }

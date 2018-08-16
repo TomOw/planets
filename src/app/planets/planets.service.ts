@@ -19,6 +19,10 @@ export class PlanetsService {
     return this.http.get<PageResponse<Planet>>(this.url, {params: {page: String(page)}});
   }
 
+  getByPageAndSearchQuery(page: number, query: string) {
+    return this.http.get<PageResponse<Planet>>(this.url, {params: {page: String(page), search: query}});
+  }
+
   search(query: string): Observable<PageResponse<Planet>> {
     return this.http.get<PageResponse<Planet>>(this.url, {params: {search: query}});
   }

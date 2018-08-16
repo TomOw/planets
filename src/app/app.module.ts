@@ -9,6 +9,9 @@ import {AppRoutingModule} from './app.routes';
 import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 import {MessageService} from './message.service';
 import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
+import {SharedModule} from './shared/shared.module';
+import {NotificationService} from './notification.service';
 
 
 @NgModule({
@@ -21,11 +24,14 @@ import {HttpClientModule} from '@angular/common/http';
     BrowserAnimationsModule,
     PlanetsMaterialModule,
     PlanetsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    SharedModule
   ],
   providers: [
     MessageService,
     {provide: LocationStrategy, useClass: HashLocationStrategy},
+    NotificationService
   ],
   bootstrap: [AppComponent]
 })

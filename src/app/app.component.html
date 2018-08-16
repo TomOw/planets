@@ -9,7 +9,7 @@
     </div>
     <div class="search">
       <mat-input-container>
-        <input placeholder="Search" matInput>
+        <input [(ngModel)]="searchQuery" (ngModelChange)="searchChanged()" placeholder="Search" matInput>
       </mat-input-container>
     </div>
   </header>
