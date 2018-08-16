@@ -31,7 +31,7 @@ export class PlanetsComponent implements OnInit {
     this.skeletonsArray = Array.from(Array(this.numberOfSkeletons).keys());
 
     this.planetsService.getByPage(1).subscribe(response => {
-      // this.planetsResponse = response;
+      this.planetsResponse = response;
     })
   }
 
