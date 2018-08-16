@@ -63,6 +63,10 @@
     .planet-list__content-wrapper {
       display: flex;
       flex-direction: column;
+      mat-paginator {
+        margin-top: 24px;
+        background-color: $dark-gray;
+      }
       .planet-list__content {
         display: flex;
         flex-direction: column;
