@@ -1,57 +1,8 @@
 @import "../../variables";
 
 .planets-component {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-
-  .nav-bar {
-    position: relative;
-    background-color: $very-dark-gray;
-    height: 96px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding-left: 24px;
-    .logo {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      .logo__icon {
-        position: relative;
-        margin-right: 32px;
-        .logo__icon__planet {
-          width: 48px;
-          height: 48px;
-          background-color: lightgray;
-          border-radius: 50%;
-        }
-        .logo__icon__moon {
-          position: absolute;
-          top: -2px;
-          right: -2px;
-          width: 24px;
-          height: 24px;
-          border-radius: 50%;
-          background-color: $primary;
-        }
-      }
-      .logo__text {
-        font-size: 32px;
-        font-weight: 300;
-      }
-    }
-    .search {
-      width: 400px;
-      position: absolute;
-      left: calc(50% - 200px);
-      background-color: darken($dark-gray, 10%);
-      padding: 4px 16px;
-      mat-input-container {
-        width: 100%;
-      }
-    }
-  }
 
   .planet-list {
     display: flex;
@@ -87,29 +38,6 @@
     @media screen and (max-width: $tablet-breakpoint) {
       .planet-list__center {
         width: 100%;
-      }
-    }
-  }
-
-  .app-footer {
-    height: 64px;
-    margin-top: 32px;
-    background-color: $very-dark-gray;
-    color: $main-font-color;
-    font-weight: 300;
-    font-size: 14px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding-left: 24px;
-    div a {
-      color: $main-font-color;
-      text-decoration: none;
-      &:hover {
-        text-decoration: underline;
-      }
-      &:visited {
-        color: $main-font-color;
       }
     }
   }
