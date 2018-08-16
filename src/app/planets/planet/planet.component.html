@@ -1,3 +1,133 @@
-<p>
-  single planet
-</p>
+<div class="planet" *ngIf="planet">
+  <div class="planet__top-bar">
+    <a class="planet__top-bar__back-button" [routerLink]="''">
+      <img src="../../../assets/icons/left.png">
+      <div>Back to list</div>
+    </a>
+    <div class="planet__name">
+      {{planet.name}}
+    </div>
+  </div>
+  <div class="planet__data">
+    <div class="planet__data__left">
+
+      <div class="planet__property" style="transform: translateX(60px)">
+        <div class="planet__property__title">
+          <div class="planet__property__icon">
+            <img src="../../../assets/icons/team.png">
+          </div>
+          <div class="planet__property__text">
+            Population
+          </div>
+        </div>
+        <div class="planet__property__value">
+          {{planet.population | largeNumber}}
+        </div>
+      </div>
+
+      <div class="planet__property">
+        <div class="planet__property__title">
+          <div class="planet__property__icon">
+            <img src="../../../assets/icons/water.png">
+          </div>
+          <div class="planet__property__text">
+            Surface water
+          </div>
+        </div>
+        <div class="planet__property__value">
+          {{planet.surface_water}}%
+        </div>
+      </div>
+
+      <div class="planet__property">
+        <div class="planet__property__title">
+          <div class="planet__property__icon">
+            <img src="../../../assets/icons/hills.png">
+          </div>
+          <div class="planet__property__text">
+            Terrain
+          </div>
+        </div>
+        <div class="planet__property__value">
+          {{planet.terrain}}
+        </div>
+      </div>
+
+      <div class="planet__property" style="transform: translateX(60px)">
+        <div class="planet__property__title">
+          <div class="planet__property__icon">
+            <img src="../../../assets/icons/mist.png">
+          </div>
+          <div class="planet__property__text">
+            Climate
+          </div>
+        </div>
+        <div class="planet__property__value">
+          {{planet.climate}}
+        </div>
+      </div>
+
+    </div>
+    <div class="planet__data__img">
+      <img src="../../../assets/earth.svg">
+    </div>
+    <div class="planet__data__right">
+
+      <div class="planet__property" style="transform: translateX(-60px)">
+        <div class="planet__property__title">
+          <div class="planet__property__icon">
+            <img src="../../../assets/icons/double-arrow-diagonal-in-a-circle.png">
+          </div>
+          <div class="planet__property__text">
+            Diameter
+          </div>
+        </div>
+        <div class="planet__property__value">
+          {{planet.diameter}} km
+        </div>
+      </div>
+
+      <div class="planet__property">
+        <div class="planet__property__title">
+          <div class="planet__property__icon">
+            <img src="../../../assets/icons/worldwide-shipping.png">
+          </div>
+          <div class="planet__property__text">
+            Rotation period
+          </div>
+        </div>
+        <div class="planet__property__value">
+          {{planet.rotation_period}} h
+        </div>
+      </div>
+
+      <div class="planet__property">
+        <div class="planet__property__title">
+          <div class="planet__property__icon">
+            <img src="../../../assets/icons/solar-system.png">
+          </div>
+          <div class="planet__property__text">
+            Orbital period
+          </div>
+        </div>
+        <div class="planet__property__value">
+          {{planet.orbital_period}} days
+        </div>
+      </div>
+
+      <div class="planet__property" style="transform: translateX(-60px)">
+        <div class="planet__property__title">
+          <div class="planet__property__icon">
+            <img src="../../../assets/icons/gravity.png">
+          </div>
+          <div class="planet__property__text">
+            Gravity
+          </div>
+        </div>
+        <div class="planet__property__value">
+          {{planet.gravity}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

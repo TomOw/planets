@@ -16,6 +16,7 @@
       display: flex;
       flex-direction: row;
       align-items: center;
+      text-decoration: none;
       .logo__icon {
         position: relative;
         margin-right: 32px;
@@ -38,6 +39,12 @@
       .logo__text {
         font-size: 32px;
         font-weight: 300;
+        color: $main-font-color;
+        text-decoration: none;
+        &:visited {
+          color: $main-font-color;
+
+        }
       }
     }
     .search {

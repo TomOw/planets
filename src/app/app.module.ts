@@ -12,6 +12,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import {SharedModule} from './shared/shared.module';
 import {NotificationService} from './notification.service';
+import {RouterModule} from '@angular/router';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import {NotificationService} from './notification.service';
     PlanetsModule,
     HttpClientModule,
     FormsModule,
-    SharedModule
+    SharedModule,
+    RouterModule
   ],
   providers: [
     MessageService,

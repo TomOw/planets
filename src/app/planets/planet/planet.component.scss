@@ -1,0 +1,124 @@
+@import "../../../variables";
+
+.planet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 24px;
+
+  .planet__top-bar {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    height: 96px;
+    width: 100%;
+    padding-left: 40px;
+    .planet__top-bar__back-button {
+      cursor: pointer;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      text-decoration: none;
+      color: $main-font-color;
+      img {
+        width: 64px;
+        height: 64px;
+        margin-right: 16px;
+      }
+      div {
+        font-size: 24px;
+        font-weight: 300;
+      }
+      &:hover {
+        div {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .planet__name {
+      position: absolute;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      width: 600px;
+      left: calc(50% - 300px);
+      font-size: 80px;
+      font-weight: 300;
+      color: $main-font-color;
+    }
+  }
+
+  .planet__data {
+    margin-top: 60px;
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+
+    @media screen and (max-width: $desktop-breakpoint) {
+      .planet__data {
+        width: 80%;
+      }
+    }
+    @media screen and (max-width: $tablet-breakpoint) {
+      .planet__data {
+        width: 100%;
+      }
+    }
+
+    .planet__data__left, .planet__data__right {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .planet__data__left {
+      align-items: flex-end;
+    }
+
+    .planet__data__right {
+      align-items: flex-start;
+    }
+
+    .planet__data__img {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      flex-grow: 1;
+    }
+  }
+}
+
+.planet__property {
+
+  margin-bottom: 32px;
+
+  .planet__property__title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    .planet__property__icon {
+      margin-right: 8px;
+      img {
+        width: 64px;
+        height: 64px;
+      }
+    }
+
+    .planet__property__text {
+      font-size: 32px;
+      font-weight: 300;
+    }
+
+  }
+
+  .planet__property__value {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 400;
+  }
+}

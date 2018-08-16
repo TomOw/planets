@@ -1,12 +1,12 @@
 <div class="app-component">
   <header class="nav-bar">
-    <div class="logo">
+    <a class="logo" [routerLink]="'/'">
       <div class="logo__icon">
         <div class="logo__icon__planet"></div>
         <div class="logo__icon__moon"></div>
       </div>
       <div class="logo__text">PLANETS</div>
-    </div>
+    </a>
     <div class="search">
       <mat-input-container>
         <input [(ngModel)]="searchQuery" (ngModelChange)="searchChanged()" placeholder="Search" matInput>
@@ -17,8 +17,12 @@
     <router-outlet></router-outlet>
   </main>
   <footer class="app-footer">
-    <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a
-      href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a
+    <div>Icons made by
+      <a href="http://www.freepik.com" title="Freepik">Freepik</a>,
+      <a href="https://www.flaticon.com/authors/robin-kylander" title="Robin Kylander">Robin Kylander</a>,
+      <a href="https://www.flaticon.com/authors/vignesh-oviyan" title="Vignesh Oviyan">Vignesh Oviyan</a>,
+
+      from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a
       href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
     </div>
   </footer>

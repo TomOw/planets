@@ -8,13 +8,15 @@ import {PlanetListElementComponent} from './planet-list-element/planet-list-elem
 import {PlanetsService} from './planets.service';
 import {SharedModule} from '../shared/shared.module';
 import { PlanetListElementSkeletonComponent } from './planet-list-element-skeleton/planet-list-element-skeleton.component';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   imports: [
     PlanetsRoutingModule,
     CommonModule,
     PlanetsMaterialModule,
-    SharedModule
+    SharedModule,
+    RouterModule
   ],
   declarations: [
     PlanetsComponent,

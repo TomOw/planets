@@ -52,7 +52,6 @@ export class PlanetsComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.notificationsSubscription.unsubscribe();
-    this.searchRequestSubscription.unsubscribe();
   }
 
   onPageChange(event: PageEvent) {
