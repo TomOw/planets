@@ -1,0 +1,93 @@
+$base-color: gray;
+$shine-color: #9b9b9b;
+$animation-duration: 1.6s;
+@mixin background-gradient {
+  background-image: linear-gradient(90deg, $base-color 0px, $shine-color 40px, $base-color 80px);
+  background-size: 300px;
+}
+
+@keyframes shine-lines {
+  0% {
+    background-position: - 100 px
+  }
+  40%, 100% {
+    background-position: 140px
+  }
+}
+
+.planet--skeleton {
+  margin-top: 24px;
+  height: 214px;
+  .planet--skeleton__main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 956px;
+    height: 122px;
+    .planet--skeleton__img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: grey;
+      flex-shrink: 0;
+      @include background-gradient;
+      animation: shine-lines $animation-duration infinite linear;
+    }
+  }
+  .planet--skeleton__data {
+    display: flex;
+    flex-direction: column;
+    padding-left: 48px;
+    width: 948px;
+    height: 122px;
+    .planet--skeleton__data__name {
+      width: 120px;
+      height: 38px;
+      margin: 16px 0;
+      font-weight: 400;
+      padding: 16px 0;
+      background-color: grey;
+      @include background-gradient;
+      animation: shine-lines $animation-duration infinite linear;
+    }
+    .planet--skeleton__data__info {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      .planet--skeleton__data__property {
+        width: 300px;
+        height: 24px;
+        margin: 14px 100px 14px 0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        background-color: grey;
+        font-weight: 300;
+        @include background-gradient;
+        animation: shine-lines $animation-duration infinite linear;
+        img {
+          width: 36px;
+          height: 36px;
+          margin-right: 8px;
+          flex-shrink: 0;
+        }
+        div {
+          margin-right: 4px;
+        }
+      }
+    }
+  }
+  mat-card-actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    div {
+      width: 88px;
+      height: 36px;
+      background-color: grey;
+      @include background-gradient;
+      animation: shine-lines $animation-duration infinite linear;
+    }
+  }
+}

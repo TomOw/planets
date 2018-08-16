@@ -52,17 +52,30 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  .planet-list__content {
+  .planet-list__center {
     width: 70%;
-    height: 500px;
+    display: flex;
+    flex-direction: column;
+    .planet-list__skeletons {
+      display: flex;
+      flex-direction: column;
+    }
+    .planet-list__content-wrapper {
+      display: flex;
+      flex-direction: column;
+      .planet-list__content {
+        display: flex;
+        flex-direction: column;
+      }
+    }
   }
   @media screen and (max-width: $desktop-breakpoint) {
-    .planet-list__content {
+    .planet-list__center {
       width: 80%;
     }
   }
   @media screen and (max-width: $tablet-breakpoint) {
-    .planet-list__content {
+    .planet-list__center {
       width: 100%;
     }
   }

@@ -14,7 +14,20 @@
 </header>
 
 <main class="planet-list">
-  <div class="planet-list__content">
-    <planet-list-element *ngFor="let planet of planets" [planet]="planet"></planet-list-element>
+  <div class="planet-list__center">
+    <div class="planet-list__skeletons"
+         *ngIf="!planetsResponse || (planetsResponse && planetsResponse.results.length == 0)">
+      <planet-list-element-skeleton *ngFor="let skeleton of skeletonsArray"></planet-list-element-skeleton>
+    </div>
+    <div class="planet-list__content-wrapper" *ngIf="planetsResponse">
+      <div class="planet-list__content">
+        <planet-list-element *ngFor="let planet of planetsResponse.results" [planet]="planet"></planet-list-element>
+      </div>
+      <mat-paginator [length]="planetsResponse.count"
+                     [pageSizeOptions]="[5, 10, 25, 100]"
+                     [pageSize]="10"
+                     (page)="onPageChange($event)">
+      </mat-paginator>
+    </div>
   </div>
 </main>

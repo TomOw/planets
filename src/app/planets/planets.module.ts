@@ -6,19 +6,21 @@ import {PlanetsMaterialModule} from '../planets-material.module';
 import {PlanetComponent} from './planet/planet.component';
 import {PlanetListElementComponent} from './planet-list-element/planet-list-element.component';
 import {PlanetsService} from './planets.service';
-import {LargeNumberPipe} from './pipes/large-number.pipe';
+import {SharedModule} from '../shared/shared.module';
+import { PlanetListElementSkeletonComponent } from './planet-list-element-skeleton/planet-list-element-skeleton.component';
 
 @NgModule({
   imports: [
     PlanetsRoutingModule,
     CommonModule,
     PlanetsMaterialModule,
+    SharedModule
   ],
   declarations: [
     PlanetsComponent,
     PlanetComponent,
     PlanetListElementComponent,
-    LargeNumberPipe
+    PlanetListElementSkeletonComponent,
   ],
   providers: [PlanetsService],
   entryComponents: []

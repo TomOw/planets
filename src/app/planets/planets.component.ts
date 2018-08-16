@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {PlanetsService} from './planets.service';
 import {MessageService} from '../message.service';
-import {Planet} from '../domain/models';
+import {PageResponse, Planet} from '../domain/models';
+import {PageEvent} from '@angular/material';
 
 @Component({
   selector: 'app-planets',
@@ -10,15 +11,29 @@ import {Planet} from '../domain/models';
 })
 export class PlanetsComponent implements OnInit {
 
-  planets: Planet[] = [];
+  planetsResponse: PageResponse<Planet>;
+
+  numberOfSkeletons = 3;
+  skeletonsArray;
 
   constructor(private planetsService: PlanetsService,
               private messageService: MessageService) {
   }
 
   ngOnInit(): void {
+
+    this.skeletonsArray = Array.from(Array(this.numberOfSkeletons).keys());
+
     this.planetsService.getByPage(1).subscribe(response => {
-      this.planets = response.results;
+      this.planetsResponse = response;
+    })
+  }
+
+  onPageChange(event: PageEvent) {
+    console.log(event);
+    this.planetsResponse.results = [];
+    this.planetsService.getByPage(event.pageIndex + 1).subscribe(response => {
+      this.planetsResponse = response;
     })
   }
 
