@@ -56,6 +56,7 @@ export class PlanetsComponent implements OnInit, OnDestroy {
 
   onPageChange(event: PageEvent) {
     console.log(event);
+    window.scrollTo(0, 0);
     this.planetsResponse.results = [];
     if (!this.searchQuery) {
       this.planetsService.getByPage(event.pageIndex + 1).subscribe(response => {
