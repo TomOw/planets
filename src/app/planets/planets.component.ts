@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {PlanetsService} from './planets.service';
 import {MessageService} from '../message.service';
-import {PageResponse, Planet} from '../domain/models';
+import {AppNotificationAction, PageResponse, Planet} from '../domain/models';
 import {PageEvent} from '@angular/material';
 import {NotificationService} from '../notification.service';
 
@@ -25,6 +25,7 @@ export class PlanetsComponent implements OnInit, OnDestroy {
   constructor(private planetsService: PlanetsService,
               private messageService: MessageService,
               private notificationService: NotificationService) {
+    this.notificationService.emitNotification(AppNotificationAction.SHOW_SEARCH, null);
   }
 
   ngOnInit(): void {

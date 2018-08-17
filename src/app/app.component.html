@@ -7,7 +7,7 @@
       </div>
       <div class="logo__text">PLANETS</div>
     </a>
-    <div class="search">
+    <div class="search" *ngIf="showSearch">
       <mat-input-container>
         <input [(ngModel)]="searchQuery" (ngModelChange)="searchChanged()" placeholder="Search" matInput>
       </mat-input-container>

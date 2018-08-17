@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {PlanetsService} from '../planets.service';
-import {Planet} from '../../domain/models';
+import {AppNotificationAction, Planet} from '../../domain/models';
 import {ImageService} from '../../shared/images-service/image.service';
+import {NotificationService} from '../../notification.service';
 
 @Component({
   selector: 'app-planet',
@@ -17,7 +18,11 @@ export class PlanetComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
               private planetsService: PlanetsService,
-              public imageService: ImageService) {
+              public imageService: ImageService,
+              private notificationService: NotificationService) {
+
+    this.notificationService.emitNotification(AppNotificationAction.HIDE_SEARCH, null);
+
   }
 
   ngOnInit() {

@@ -37,5 +37,5 @@ export class AppNotification {
 }
 
 export enum AppNotificationAction {
-  SEARCH
+  SEARCH, HIDE_SEARCH, SHOW_SEARCH
 }

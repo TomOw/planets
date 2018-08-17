@@ -23,7 +23,22 @@ export class AppComponent implements OnInit {
 
   searchQuery: string;
 
+  showSearch: boolean = true;
+
   ngOnInit(): void {
+    this.notificationService.appNotifications$.subscribe(notification => {
+      console.log(notification)
+      switch (notification.action) {
+        case AppNotificationAction.HIDE_SEARCH: {
+          this.showSearch = false;
+          break;
+        }
+        case AppNotificationAction.SHOW_SEARCH: {
+          this.showSearch = true;
+          break;
+        }
+      }
+    })
   }
 
 
