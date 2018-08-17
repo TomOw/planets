@@ -76,17 +76,6 @@ $animation-duration: 1.6s;
     flex-direction: row;
     width: 70%;
 
-    @media screen and (max-width: $desktop-breakpoint) {
-      .planet--skeleton__data {
-        width: 80%;
-      }
-    }
-    @media screen and (max-width: $tablet-breakpoint) {
-      .planet--skeleton__data {
-        width: 100%;
-      }
-    }
-
     .planet--skeleton__data__left, .planet--skeleton__data__right {
       flex-grow: 1;
       display: flex;
@@ -117,6 +106,16 @@ $animation-duration: 1.6s;
         @include background-gradient;
         animation: shine-lines $animation-duration infinite linear;
       }
+    }
+  }
+  @media screen and (max-width: $desktop-breakpoint) {
+    .planet--skeleton__data {
+      width: 90%;
+    }
+  }
+  @media screen and (max-width: $tablet-breakpoint) {
+    .planet--skeleton__data {
+      width: 100%;
     }
   }
 }
@@ -154,4 +153,12 @@ $animation-duration: 1.6s;
     @include background-gradient;
     animation: shine-lines $animation-duration infinite linear;
   }
+}
+
+.planet--skeleton__property--move-right {
+  transform: translateX(60px);
+}
+
+.planet--skeleton__property--move-left {
+  transform: translateX(-60px);
 }

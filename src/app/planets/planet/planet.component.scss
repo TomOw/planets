@@ -55,17 +55,6 @@
     flex-direction: row;
     width: 70%;
 
-    @media screen and (max-width: $desktop-breakpoint) {
-      .planet__data {
-        width: 80%;
-      }
-    }
-    @media screen and (max-width: $tablet-breakpoint) {
-      .planet__data {
-        width: 100%;
-      }
-    }
-
     .planet__data__left, .planet__data__right {
       flex-grow: 1;
       display: flex;
@@ -87,6 +76,16 @@
       justify-content: center;
       flex-grow: 1;
       transform: translateY(-20px);
+    }
+  }
+  @media screen and (max-width: $desktop-breakpoint) {
+    .planet__data {
+      width: 90%;
+    }
+  }
+  @media screen and (max-width: $tablet-breakpoint) {
+    .planet__data {
+      width: 100%;
     }
   }
 }
@@ -123,4 +122,12 @@
     font-size: 20px;
     font-weight: 400;
   }
+}
+
+.planet__property--move-right {
+  transform: translateX(60px);
+}
+
+.planet__property--move-left {
+  transform: translateX(-60px);
 }

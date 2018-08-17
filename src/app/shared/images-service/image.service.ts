@@ -9,7 +9,6 @@ export class ImageService {
   getImageByClimate(climateString: string) {
     let climates = climateString.split('\,');
     let climate = climates[0];
-    console.log(climate);
     switch (climate) {
       case 'temperate': {
         return 'earth.svg'

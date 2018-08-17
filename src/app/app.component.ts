@@ -27,7 +27,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.notificationService.appNotifications$.subscribe(notification => {
-      console.log(notification)
       switch (notification.action) {
         case AppNotificationAction.HIDE_SEARCH: {
           this.showSearch = false;
