@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Planet} from '../../domain/models';
+import {ImageService} from '../../shared/images-service/image.service';
 
 @Component({
   selector: 'planet-list-element',
@@ -11,7 +12,7 @@ export class PlanetListElementComponent implements OnInit {
   @Input()
   planet: Planet;
 
-  constructor() { }
+  constructor(public imageService: ImageService) { }
 
   ngOnInit() {
   }

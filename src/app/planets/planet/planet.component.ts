@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {PlanetsService} from '../planets.service';
 import {Planet} from '../../domain/models';
+import {ImageService} from '../../shared/images-service/image.service';
 
 @Component({
   selector: 'app-planet',
@@ -15,7 +16,8 @@ export class PlanetComponent implements OnInit {
   planet: Planet;
 
   constructor(private route: ActivatedRoute,
-              private planetsService: PlanetsService) {
+              private planetsService: PlanetsService,
+              public imageService: ImageService) {
   }
 
   ngOnInit() {

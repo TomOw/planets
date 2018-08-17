@@ -1,6 +1,6 @@
 <mat-card class="planet">
   <mat-card-content class="planet__main">
-    <img class="planet__img" src="../../../assets/earth.svg">
+    <img class="planet__img" src="{{'../../../assets/' + imageService.getImageByClimate(planet.climate)}}">
     <div class="planet__data">
       <div class="planet__data__name">
         {{planet.name}}
